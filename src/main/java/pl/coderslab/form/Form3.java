@@ -20,7 +20,7 @@ public class Form3 extends HttpServlet {
                 correctValues.add(i);
             }
         }
-        var intArray = correctValues.toArray();
+        Object[] intArray = correctValues.toArray();
         response.getWriter().write(Arrays.toString(intArray));
     }
 }

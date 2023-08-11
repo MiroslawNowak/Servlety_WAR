@@ -13,21 +13,21 @@ public class Main01 {
             elements.add(i);
         }
 
-//        for (int i = 0; i < elements.size(); i++)    {
-//            System.out.println(elements.get(i));
-//        }
-//        Iterator itr = elements.iterator();
-//
-//        while (itr.hasNext()) {
-//            System.out.println(itr.next());
-//        }
+       for (int i = 0; i < elements.size(); i++)    {
+            System.out.println(elements.get(i));
+       }
+        Iterator <Integer> itr = elements.iterator();
 
-//        for (Iterator itr2 = elements.iterator(); itr2.hasNext(); ) {
-//            System.out.println(itr2.next());
-//        }
-//        for (int i : elements) {
-//            System.out.println(i);
-//        }
+        while (itr.hasNext()) {
+            System.out.println(itr.next());
+        }
+
+        for (Iterator itr2 = elements.iterator(); itr2.hasNext(); ) {
+            System.out.println(itr2.next());
+        }
+        for (int i : elements) {
+            System.out.println(i);
+        }
         elements.forEach(System.out::println);
     }
 }

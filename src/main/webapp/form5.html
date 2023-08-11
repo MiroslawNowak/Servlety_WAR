@@ -5,10 +5,13 @@
     <title>Form 5</title>
 </head>
 <body>
-<form action="/post5" method="get">
-  <input type="number" name="number">
-  <button type="submit" name="toCelcius">Calculate to Celcius degree</button>
-  <button type="submit" name="toFarenhait">Calculate to ferenhait degree</button>
+<form action="/post5" method="POST">
+    <label>
+        Temperatura:
+        <input type="number" min="0" step="1" name="degrees">
+    </label>
+    <input type="submit" name="conversionType" value="celcToFahr">
+    <input type="submit" name="conversionType" value="FahrToCelc">
 </form>
 </body>
 </html>

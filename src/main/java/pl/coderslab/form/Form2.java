@@ -34,7 +34,7 @@ public class Form2 extends HttpServlet {
                     modifiedInput = modifiedInput.replaceAll(swearWord, "*".repeat(swearWord.length()));
                 }
             }
-            var formattedResponse = formatOutput(modifiedInput);
+            String formattedResponse = formatOutput(modifiedInput);
             response.getWriter().write(formattedResponse);
 
             // Return will stop further execution of function
