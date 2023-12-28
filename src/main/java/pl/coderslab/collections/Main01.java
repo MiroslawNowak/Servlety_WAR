@@ -14,7 +14,7 @@ public class Main01 {
         }
 
        for (int i = 0; i < elements.size(); i++)    {
-            System.out.println(elements.get(i));
+            System.out.print(elements.get(i));
        }
         Iterator <Integer> itr = elements.iterator();
 
@@ -22,12 +22,13 @@ public class Main01 {
             System.out.println(itr.next());
         }
 
-        for (Iterator itr2 = elements.iterator(); itr2.hasNext(); ) {
+        for (Iterator<Integer> itr2 = elements.iterator(); itr2.hasNext(); ) {
             System.out.println(itr2.next());
         }
         for (int i : elements) {
             System.out.println(i);
         }
-        elements.forEach(System.out::println);
+
+        elements.forEach(System.out::print);
     }
 }

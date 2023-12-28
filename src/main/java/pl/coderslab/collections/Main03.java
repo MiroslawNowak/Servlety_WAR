@@ -11,15 +11,23 @@ public class Main03 {
     public static void main(String[] args) {
     List<City> cityList = initialize();
 
+    List<City> reversedList = Main04.reverse(cityList);
+
     Iterator<City> it = cityList.iterator();
 
     while (it.hasNext()){
         System.out.println(it.next());
     }
 
-    firstSubList(cityList, 1, 3);
+    List<City> subList = firstSubList(cityList, 1, 2);
 
+    it = reversedList.iterator();
+
+    while (it.hasNext()) {
+        System.out.println(it.next());
     }
+    }
+
 
     public static List<City> initialize() {
         List<City> cities = new ArrayList<>();
@@ -38,7 +46,6 @@ public class Main03 {
     }
 
     public static List<City> firstSubList(List<City> list, int start, int end) {
-        List<City> subList = new ArrayList<>();
-        return subList.subList(start, end);
+        return list.subList(start, end);
     }
 }
