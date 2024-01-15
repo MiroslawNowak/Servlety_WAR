@@ -12,10 +12,10 @@ public class Main02 {
         int score = 0;
 
         for (var question : answers.keySet()) {
-            System.out.printf("Podaj przeciwieństwado słowa: %s", question);
+            System.out.printf("Podaj przeciwieństwado słowa: %s", question).println();
             var userInput = scan.nextLine();
 
-            if (question.equalsIgnoreCase(answers.get(question))) {
+            if (userInput.equalsIgnoreCase(answers.get(question))) {
                 score++;
             }
         }
