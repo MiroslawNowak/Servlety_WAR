@@ -10,14 +10,13 @@ import java.io.PrintWriter;
 public class Get1 extends HttpServlet {
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-    try {
+    try(PrintWriter responseWriter = response.getWriter()) {
         int start = Integer.parseInt(request.getParameter("start"));
         int end = Integer.parseInt(request.getParameter("end"));
-        PrintWriter responseWriter = response.getWriter();
+
         for (int i = start; i <= end; i++) {
             responseWriter.append(String.valueOf(i)).append(" ");
         }
-        responseWriter.close();
     } catch (NumberFormatException e) {
         response.getWriter().append("<h1>BRAK</h1>");
     }

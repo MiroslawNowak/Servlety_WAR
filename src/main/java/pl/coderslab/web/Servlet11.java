@@ -8,7 +8,7 @@ import javax.servlet.http.*;
 import javax.servlet.annotation.*;
 import java.io.IOException;
 
-@WebServlet(name = "Servlet11", value = "/Servlet11")
+@WebServlet(name = "Servlet11", value = "/servlet11")
 public class Servlet11 extends HttpServlet {
     private static final Logger log = LogManager.getLogger(Servlet11.class);
     @Override

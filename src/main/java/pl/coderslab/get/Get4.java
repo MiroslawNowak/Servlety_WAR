@@ -20,6 +20,7 @@ public class Get4 extends HttpServlet {
             response.getWriter().append(String.format("%s - %s%n", entry.getKey(), Arrays.toString(entry.getValue())));
         }
         responseW.append("</body></html>");
+        responseW.close();
 
     }
 
