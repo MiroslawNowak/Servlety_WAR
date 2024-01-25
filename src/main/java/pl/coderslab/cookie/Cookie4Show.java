@@ -12,11 +12,24 @@ import java.io.PrintWriter;
 public class Cookie4Show extends HttpServlet {
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+        response.setContentType("text/html");
         Cookie[] cookies = request.getCookies();
         PrintWriter resp = response.getWriter();
+
+       if (cookies != null && cookies.length > 0) {
+
         resp.write("<h1> Active cookies: </h1>");
-        for(Cookie cookie : cookies) {
-            resp.append(String.format("<h2>Name: %s, Value: %s",cookie.getName(),cookie.getValue() + "</h2><br>"));
+
+        for (Cookie cookie : cookies) {
+            String cookieName = cookie.getName();
+            resp.append(String.format("<h2>Name: %s, Value: %s", cookieName, cookie.getValue()))
+                    .append("[<a href=\"/removeCookie?cookieName=")
+                    .append(cookieName)
+                    .append("\">Usun</a>]</h2>");
+        }
+
+        } else {
+        resp.write("<h1>Brak cookies!</h1>");
         }
     }
 

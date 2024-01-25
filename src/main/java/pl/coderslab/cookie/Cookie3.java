@@ -21,7 +21,7 @@ public class Cookie3 extends HttpServlet {
 
         Cookie cookie = new Cookie(key, value);
         cookie.setMaxAge(timeInHours);
-
+        response.addCookie(cookie);
         response.setContentType("text/html");
         response.getWriter().println("Cookie created successfully.");
     }

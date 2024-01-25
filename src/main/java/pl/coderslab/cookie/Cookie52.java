@@ -13,18 +13,21 @@ public class Cookie52 extends HttpServlet {
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         Cookie[] cookies = request.getCookies();
         PrintWriter out = response.getWriter();
-        boolean has51 = false;
-        for (Cookie cookie : cookies) {
-            if (cookie.getValue().equals("cookie51")) {
-                has51 = true;
-                cookie.setMaxAge(0);
-                response.addCookie(cookie);
-                break;
+
+        try {
+            for (Cookie cookie : cookies) {
+                if (cookie.getValue().equals("cookie51")) {
+                    out.write("<html><body><h1> Witaj na stronie cookie 52! </h1></body></html>");
+                    cookie.setMaxAge(0);
+                    response.addCookie(cookie);
+                    break;
+
+                } else {
+                    String message = "Nie odwiedziles jeszcze tej strony";
+                    response.sendRedirect("cookie51?msg=" + URLEncoder.encode(message, "UTF-8"));
+                }
             }
-        }
-        if(has51) {
-            out.write("<html><body><h1> Witaj na stronie cookie 52! </h1></body></html>");
-        } else {
+        } catch (NullPointerException e) {
             String message = "Nie odwiedziles jeszcze tej strony";
             response.sendRedirect("cookie51?msg=" + URLEncoder.encode(message, "UTF-8"));
         }
