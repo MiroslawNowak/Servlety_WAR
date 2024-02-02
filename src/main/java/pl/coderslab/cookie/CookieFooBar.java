@@ -10,7 +10,7 @@ public class CookieFooBar extends HttpServlet {
     private static final int ONE_DAY_IN_SECONDS = 86400;
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-        Cookie cookie = new Cookie("foo", "bar");
+        Cookie cookie = new Cookie("newPage01", "page01");
         cookie.setMaxAge(ONE_DAY_IN_SECONDS);
         response.addCookie(cookie);
     }

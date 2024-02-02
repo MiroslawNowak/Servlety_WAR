@@ -9,14 +9,14 @@
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
 <html>
 <head>
-    <title>Show FooBar cookie</title>
+    <title>Page 01 cookie</title>
     <link rel="stylesheet" type="text/css" href="styles/indexStyle.css" />
 </head>
 <body>
 <%@ include file="header.jsp" %>
 
-<c:set var="foo" value="${cookie.foo.value}"/>
-<c:out value="${foo}" default="Brak ciasteczka"/>
+<c:set var="page1" value="${cookie.newPage01.value}"/>
+<c:out value="${page1}" default="First visit page01."/>
 
 <%@ include file="footer.jsp" %>
 </body>
